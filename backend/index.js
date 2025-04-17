@@ -7,8 +7,8 @@ let cors = require("cors")
 app.use(bodyparser.json())
 app.use(cors())
 
-app.use("/login",require("./routers/Login"))
-app.use("/register",require("./routers/Register"))
+app.use("/login",require("./routers/login"))
+app.use("/register",require("./routers/register"))
 app.use("/fetchdata",require("./routers/fetch"))
 app.use("/update",require("./routers/update"))
 
