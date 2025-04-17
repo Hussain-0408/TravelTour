@@ -13,6 +13,9 @@
   "author": "Hussain",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "mongodb": "^6.15.0",
     "mongose": "^0.0.2-security",
