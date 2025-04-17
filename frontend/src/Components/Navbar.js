@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../navbar.css";
+import "../Styles/navbar.css";
 import kashmir1 from "./image/kashmirlogo1.png";
 
 function Navbar() {

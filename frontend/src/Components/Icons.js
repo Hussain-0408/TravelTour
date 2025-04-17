@@ -1,7 +1,7 @@
 import React from 'react'
 import { SiFacebook } from "react-icons/si";
 import { FaInstagram } from "react-icons/fa";
-import '../icons.css'
+import '../Styles/icons.css'
 
 
 function Icons() {

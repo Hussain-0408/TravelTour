@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import image2 from "./image/image2.jpg"
-import "./about.css"
+import '../Styles/about.css'
 import Footer from './Footer'
 
 function Aboutus() {

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Input, Label, FormGroup, Button, Form } from 'reactstrap'
 import axios from "axios"
 import { Link, useNavigate } from 'react-router-dom';
-import '../login.css';
+import '../Styles/login.css';
 
 
 

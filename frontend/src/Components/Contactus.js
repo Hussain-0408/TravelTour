@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../contactus.css';
+import '../Styles/contactus.css';
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';

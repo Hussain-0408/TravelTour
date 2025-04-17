@@ -6,7 +6,7 @@ import mountain from './image/mountain.jpg';
 import mountimg from './image/mountimg.jpg';
 import skking from './image/skking.jpg';
 import image4 from './image/image4.jpg';
-import '../gallery.css';
+import '../Styles/gallery.css';
 
 function Gallery() {
   return (

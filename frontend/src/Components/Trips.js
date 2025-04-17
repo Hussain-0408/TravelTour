@@ -10,7 +10,7 @@ import sikking from './image/skking.jpg';
 import sight from './image/sightseeing.jpg';
 import hourse from './image/hourse.jpg';
 import trikking from './image/trikking.jpg';
-import '../trips.css';
+import '../Styles/trips.css';
 
 function Trips() {
   return (

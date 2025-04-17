@@ -1,5 +1,5 @@
 import React from 'react';
-import '../ourservices.css';
+import '../Styles/ourservices.css';
 import Navbar from './Navbar';
 import house from './image/house.webp';
 import hotel from './image/hotel.jpg';
