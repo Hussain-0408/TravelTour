@@ -1,0 +1,195 @@
+/* about.css */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar-container {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: yellow;
+}
+
+/* Hero Image */
+.imagesection img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+/* About Section */
+.aboutcontainer {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.aboutcontainer h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.aboutsection2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.aboutinnerdiv, .aboutinnerdiv1 {
+    width: 45%;
+    text-align: justify;
+    font-size: 1.2rem;
+    color: #555;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Sections */
+.formcontainer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.innercontainer, .innercontainer1 {
+    width: 45%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.form p {
+    font-size: 1rem;
+    color: #444;
+    text-align: justify;
+}
+
+/* Why Choose Us Section */
+.whychoose {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f9f9f9;
+}
+
+.whychooseheading h1 {
+    font-size: 2.5rem;
+    color: green;
+}
+
+.whychooseheading p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: black;
+}
+
+/* Choose Container */
+.choosecontainer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.choosecontainer1, .choosecontainer2 {
+    width: 45%;
+}
+
+.local, .personalised, .diverse, .safety {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.local h1, .personalised h1, .diverse h1, .safety h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.local p, .personalised p, .diverse p, .safety p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .aboutinnerdiv, .aboutinnerdiv1,
+    .innercontainer, .innercontainer1,
+    .choosecontainer1, .choosecontainer2 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .aboutcontainer h1 {
+        font-size: 2rem;
+    }
+
+    .aboutinnerdiv, .aboutinnerdiv1 {
+        font-size: 1rem;
+    }
+
+    .formcontainer {
+        flex-direction: column;
+    }
+
+    .form h1 {
+        font-size: 1.5rem;
+    }
+
+    .choosecontainer {
+        flex-direction: column;
+    }
+
+    .whychooseheading h1 {
+        font-size: 2rem;
+    }
+
+    .whychooseheading p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutcontainer h1 {
+        font-size: 1.8rem;
+    }
+
+    .aboutinnerdiv, .aboutinnerdiv1 {
+        font-size: 0.9rem;
+    }
+
+    .form h1 {
+        font-size: 1.2rem;
+    }
+
+    .whychooseheading h1 {
+        font-size: 1.8rem;
+    }
+
+    .whychooseheading p {
+        font-size: 1rem;
+    }
+}
