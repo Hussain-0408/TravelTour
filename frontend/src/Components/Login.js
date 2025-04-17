@@ -4,101 +4,89 @@ import axios from "axios"
 import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/login.css';
 
-
-
 function Login() {
-   const [formdata, setFormdata] = useState({
-      email: "",
-      password: "",
-    });
+  const [formdata, setFormdata] = useState({
+    email: "",
+    password: "",
+  });
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("")
-  const navigate = useNavigate()
-  const handlechange = async (e) => {
-    e.preventDefault();
+  const navigate = useNavigate();
+
+  const handleChange = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    console.log("Form data before submit:", formdata); // Debugging line
+
+    // Ensure we have data
+    if (!formdata.email || !formdata.password) {
+      alert("Please fill in both email and password");
+      return;
+    }
+
     try {
-      let response = await axios.post("http://localhost:3007/Login", { "email": email, "password": password })
-      console.log(response)
-      alert(response.data)
+      // Sending POST request to the server
+      let response = await axios.post("http://localhost:3007/Login", formdata);
+
+      console.log("Response:", response); // Debugging line
+      alert(response.data);
+
       if (response.data === "Login successful") {
-        navigate('/Home')
+        navigate('/Home');
       }
 
     } catch (err) {
-      console.log(err)
+      console.log("Error:", err); // Debugging line
     }
+  };
 
-  }
   const handleFormdata = (e) => {
-    let { name, value } = e.target;
+    const { name, value } = e.target;
     setFormdata({
       ...formdata,
       [name]: value
     });
   };
+
   return (
     <div className='container'>
-
-      <Form className='loginpage' onSubmit={handlechange}  >
-
-
+      <Form className='loginpage' onSubmit={handleChange}>
         <FormGroup>
-          <Label
-            for="exampleEmail"
-            hidden
-          >
-            Email
-          </Label>
+          <Label for="email" hidden>Email</Label>
           <Input
-            id="exampleEmail"
+            id="email"
             name="email"
             placeholder="Email"
             type="email"
-            value={email}
-           onSubmit={handleFormdata} required
-            // onChange = {handleFormdata} required
-            onChange={(e) => {
-              setEmail(e.target.value) 
-              
-            }}
+            value={formdata.email}
+            onChange={handleFormdata}
+            required
           />
         </FormGroup>
-        {' '}
+
         <FormGroup>
-          <Label
-            for="examplePassword"
-            hidden
-          >
-            Password
-          </Label>
+          <Label for="password" hidden>Password</Label>
           <Input
-            id="examplePassword"
+            id="password"
             name="password"
             placeholder="Password"
             type="password"
-            value={password}
-            onSubmit={handleFormdata} required
-            onChange={(e) => {
-              setPassword(e.target.value)
-            }}
-           
+            value={formdata.password}
+            onChange={handleFormdata}
+            required
           />
-        
         </FormGroup>
-        {' '}
 
-        <Button type="Submit">
+        <Button type="submit">
           Submit
         </Button>
-        <div className='forgotregister'>
-        <Link to="/Register" id="register" style={{ textDecoration: "none" }}>Register</Link>
-        <Link to="forgotpassword" id="forgot" style={{ textDecoration: "none" }}>Forgot password</Link>
-    </div >
-      </Form >
 
-    </div >
-  )
+        <div className='forgotregister'>
+          <Link to="/Register" id="register" style={{ textDecoration: "none" }}>Register</Link>
+          <Link to="forgotpassword" id="forgot" style={{ textDecoration: "none" }}>Forgot password</Link>
+        </div>
+      </Form>
+    </div>
+  );
 }
 
-export default Login
+export default Login;

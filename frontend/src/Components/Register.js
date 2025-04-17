@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Label, FormGroup, Input, Col, Button, Form, Row } from 'reactstrap'
-import '..?Styles/register.css'
+import '../Styles/register.css';
 
 function Register() {
   const navigate = useNavigate()
@@ -34,7 +34,7 @@ function Register() {
         state: "",
         zip: ""
 
-      })
+      });
     } catch (err) {
       console.log(err)
     }

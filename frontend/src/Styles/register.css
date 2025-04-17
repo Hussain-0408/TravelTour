@@ -6,8 +6,9 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-    background-image: url("../src/Components/image/register.jpg");
+    background-image: url("../Components/image/register.jpg");
     background-size: cover;
+    background-position: center;
     
 }
 .registerpage{
@@ -58,11 +59,11 @@
 
 
 
-@media only screen and (min-width: 200px)and (max-width:800px) {
+@media only screen and (min-width: 200px)and (max-width: 800px) {
     .registerpage {
         width: 100vw;
-        height: 1100vh;
-        padding: 0px;
+        height: auto;
+        padding: 2rem 0;
     }
     .button{
         display: flex;
