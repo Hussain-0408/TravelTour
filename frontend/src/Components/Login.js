@@ -12,7 +12,7 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const handleChange = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
 
     console.log("Form data before submit:", formdata); // Debugging line
@@ -49,7 +49,7 @@ function Login() {
 
   return (
     <div className='container'>
-      <Form className='loginpage' onSubmit={handleChange}>
+      <Form className='loginpage' onSubmit={handleSubmit}>
         <FormGroup>
           <Label for="email" hidden>Email</Label>
           <Input
@@ -82,7 +82,7 @@ function Login() {
 
         <div className='forgotregister'>
           <Link to="/Register" id="register" style={{ textDecoration: "none" }}>Register</Link>
-          <Link to="forgotpassword" id="forgot" style={{ textDecoration: "none" }}>Forgot password</Link>
+          <Link to="/forgotpassword" id="forgot" style={{ textDecoration: "none" }}>Forgot password</Link>
         </div>
       </Form>
     </div>

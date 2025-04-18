@@ -45,7 +45,7 @@ function Navbar() {
               <Link className="nav-link" to="/Contactus">Contact Us</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Login">Login</Link>
+              <Link className="nav-link" to="/">Login</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link btn btn-danger text-white px-3 rounded-pill" to="/Login">
