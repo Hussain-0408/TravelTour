@@ -4,7 +4,7 @@ let mongodb = require("mongodb")
  let client = mongodb.MongoClient
  
 
-let register = express.Router().post("/",(req,res)=>{
+let login = express.Router().post("/",(req,res)=>{
     client.connect("mongodb://localhost:27017/project1",(err,db)=>{
         if(err){
             throw err
@@ -29,4 +29,4 @@ let register = express.Router().post("/",(req,res)=>{
     })
 })
 
-module.exports = register
+module.exports = login
