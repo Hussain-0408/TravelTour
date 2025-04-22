@@ -5,7 +5,7 @@ let mongodb = require("mongodb")
 let client = mongodb.MongoClient
 let cors = require("cors")
 app.use(bodyparser.json())
-app.use(cors())
+app.use(cors());
 
 app.use("/login",require("./routers/Login"))
 app.use("/register",require("./routers/Register"))

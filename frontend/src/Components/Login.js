@@ -25,7 +25,7 @@ function Login() {
 
     try {
       // Sending POST request to the server
-      let response = await axios.post("http://localhost:3007/Login", formdata);
+      let response = await axios.post("http://localhost:3007/login", formdata);
 
       console.log("Response:", response); // Debugging line
       alert(response.data);

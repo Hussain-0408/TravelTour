@@ -14,7 +14,7 @@ let updateuser = express.Router().put("/",(req,res)=>{
                     throw err;
                 }else{
                     // res.send(result);
-                    res.send("updated succesfully")
+                    res.status(200).send("updated succesfully")
                 }
             })
         }

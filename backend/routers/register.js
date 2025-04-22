@@ -15,7 +15,7 @@ let register = express.Router().post("/",(req,res)=>{
                 }else{
                    
                 //    res.send(result);
-                   res.send("Registered succesfully")
+                   res.status(200).send("Registered succesfully")
                 }
             })
         }

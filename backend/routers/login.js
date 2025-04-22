@@ -5,7 +5,7 @@ let mongodb = require("mongodb")
  
 
 let login = express.Router().post("/",(req,res)=>{
-    client.connect("mongodb://localhost:27017/project1",(err,db)=>{
+    client.connect("mongodb://localhost:27017/project1",(err,client)=>{
         if(err){
             throw err
         }else{
@@ -15,12 +15,12 @@ let login = express.Router().post("/",(req,res)=>{
                 }else{
                     if(result.length>=1){
                         if(result[0].password === req.body.password){
-                            res.send("Login successful")
+                            res.status(200).send("Login successful")
                         }else{
-                            res.send("Invalid Password")
+                            res.status(200).send("Invalid Password")
                         }
                     }else{
-                        res.send("User doesn't exist")
+                        res.status(200).send("User doesn't exist")
                     }
 
                 }
