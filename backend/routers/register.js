@@ -4,10 +4,11 @@ let mongodb = require("mongodb")
 let client = mongodb.MongoClient
   
 let register = express.Router().post("/",(req,res)=>{
-    client.connect("mongodb://localhost:27017/project1",(err,db)=>{
+    client.connect("mongodb://localhost:27017/project1",(err,client)=>{
         if(err){
             throw err
-        }else{
+        }
+        else{
             db.collection("storedata").insertOne(req.body,(err,result)=>{
                 if(err){
                     throw err
