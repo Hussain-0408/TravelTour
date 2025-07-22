@@ -7,9 +7,7 @@ import Footer from './Footer'
 function Aboutus() {
   return (
     <div>
-      <div style={{ width: "100vw",  zIndex: "1", position: "fixed", backgroundColor: "yellow" }}>
-        <Navbar style={{ position: 'fixed',  }} />
-      </div>
+      <Navbar />
       <div className='imagesection'>
         <img src={image2} style={{ width: "100%", height: "600px" }} alt='aboutus' />
       </div>

@@ -11,7 +11,8 @@ let fetchdata = express.Router().get("/",(req,res)=>{
         if(err){
             throw err
         }else{
-            db.collection("storedata").find().toArray((err,result)=>{
+            const database = db.db("project1");
+            database.collection("storedata").find().toArray((err,result)=>{
                 if(err){
                     throw err
                 }else{

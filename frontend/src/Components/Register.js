@@ -22,10 +22,6 @@ function Register() {
       let response = await axios.post("http://localhost:3007/Register", formdata)
       console.log(response.data)
       alert(response.data)
-      setFormdata("")
-      if (response.status === 200) {
-        navigate('/')
-      }
       setFormdata({
         email: "",
         password: "",
@@ -33,8 +29,10 @@ function Register() {
         city: "",
         state: "",
         zip: ""
-
       });
+      if (response.status === 200) {
+        navigate('/')
+      }
     } catch (err) {
       console.log(err)
     }

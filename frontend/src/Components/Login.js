@@ -31,7 +31,7 @@ function Login() {
       alert(response.data);
 
       if (response.data === "Login successful") {
-        navigate('/Home');
+        navigate('/'); // Redirect to home page
       }
 
     } catch (err) {
