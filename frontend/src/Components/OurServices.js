@@ -1,66 +1,52 @@
 import React from 'react';
 import '../Styles/ourservices.css';
 import Navbar from './Navbar';
-import house from './image/house.webp';
-import hotel from './image/hotel.jpg';
-import car from './image/car.jpg';
-import operator from './image/operator.jpg';
 import Footer from './Footer';
-import image1 from './image/image1.jpg'; // New uploaded image
+
+import biryani from './image/biryani.jpg';         // Biryani street food
+import hotel from './image/hotel.jpg';   // Hyderabad hotels
+import car from './image/car.jpg';       // Cab
+import heritage from './image/heritage.jpg';// Heritage tour
+import citylake from './image/citylake.jpg'; // Hero image
 
 function OurServices() {
   return (
     <div>
       {/* Navbar */}
-      <div className="navbar-container">
-        <Navbar />
-      </div>
+      <Navbar />
 
       {/* Hero Image */}
-      <div>
-        <img className="hero-image" src={image1} alt="Scenic Mountain View" />
+      <div className="hero-image-container">
+        <img src={citylake} alt="Hyderabad Cityscape" className="hero-image" loading="lazy" />
       </div>
 
       {/* Services Section */}
-      <div className="anotherourservices">
-        <h1>OUR SERVICES</h1>
-        <p>The trips that travelers are looking for local guides or experts for them..</p>
+      <div className="services-intro">
+        <h1>OUR SERVICES IN HYDERABAD</h1>
+        <p>Discover curated travel services across Hyderabad—from guided culinary tours to premium transport and heritage experiences.</p>
       </div>
 
-      {/* Houseboat Booking */}
-      <div className="anotheroperator">
-        <img src={house} alt="Houseboat" />
-        <div className="hotelbooking">
-          <h5 style={{ color: "red" }}>Houseboat Booking</h5>
-          <p>Enjoy a luxurious stay in a houseboat with breathtaking views.</p>
+      <div className="service-grid">
+        <div className="service-card">
+          <img src={biryani} alt="Biryani & Food Tour" />
+          <h5>Street Food & Biryani Tour</h5>
+          <p>Explore Hyderabadi biryani, Irani cafés, and local markets with local food experts.</p>
         </div>
-      </div>
-
-      {/* Hotel Booking */}
-      <div className="anotheroperator">
-        <div className="hotelbooking">
-          <h5 style={{ color: "green" }}>Hotel Booking</h5>
-          <p>Experience premium hospitality with our exclusive hotel deals.</p>
+        <div className="service-card">
+          <img src={hotel} alt="Hotel Booking" />
+          <h5>Hotel & Resort Booking</h5>
+          <p>Book stays in Hitech City, Charminar area, or Banjara Hills—budget to luxury.</p>
         </div>
-        <img src={hotel} alt="Hotel" />
-      </div>
-
-      {/* Car Rental */}
-      <div className="anotheroperator">
-        <img src={car} alt="Car Rental" />
-        <div className="carhotelbooking">
-          <h5 style={{ color: "orange" }}>Car & Coach Rental</h5>
-          <p>Travel comfortably with our reliable car and coach rentals.</p>
+        <div className="service-card">
+          <img src={car} alt="Cab & Airport Pickup" />
+          <h5>Cab & Airport Pickup</h5>
+          <p>24/7 airport transfers and local rides in AC vehicles with trained drivers.</p>
         </div>
-      </div>
-
-      {/* Tour Operators */}
-      <div className="anotheroperator">
-        <div className="hotelbooking">
-          <h5 style={{ color: "blue" }}>Tour Operators</h5>
-          <p>Discover the beauty of Kashmir with our experienced guides.</p>
+        <div className="service-card">
+          <img src={heritage} alt="Heritage Tour" />
+          <h5>Heritage City Tours</h5>
+          <p>Visit Charminar, Golconda Fort, Birla Mandir, and local bazaars with expert guides.</p>
         </div>
-        <img src={operator} alt="Tour Operators" />
       </div>
 
       <Footer />

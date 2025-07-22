@@ -1,115 +1,77 @@
-/* ourservices.css */
-
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+.hero-image-container {
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
 }
 
-/* Navbar */
-.navbar-container {
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: yellow;
-}
-
-/* Hero Image */
 .hero-image {
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 4px solid #e0e0e0;
 }
 
-/* Services Section */
-.anotherourservices {
-    text-align: center;
-    padding: 20px;
+.services-intro {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #f9f9f9;
+}
+.services-intro h1 {
+  font-size: 2.4rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+.services-intro p {
+  color: #555;
+  font-size: 1rem;
+  margin: 0 auto;
+  max-width: 700px;
+  line-height: 1.6;
 }
 
-.anotherourservices h1 {
-    font-size: 2.5rem;
-    color: orange;
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
 }
 
-.anotherourservices p {
-    font-size: 1.2rem;
-    color: #555;
+.service-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  text-align: center;
 }
 
-/* Service Items */
-.anotheroperator {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+.service-card:hover {
+  transform: translateY(-6px);
 }
 
-.anotheroperator img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.service-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
 }
 
-.hotelbooking, .carhotelbooking {
-    max-width: 500px;
-    padding: 20px;
+.service-card h5 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.1rem;
+  color: #004080;
 }
 
-.hotelbooking h5, .carhotelbooking h5 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+.service-card p {
+  font-size: 0.95rem;
+  color: #555;
+  padding: 0 1rem 1rem;
 }
 
-.hotelbooking p, .carhotelbooking p {
-    font-size: 1rem;
-    color: #333;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-    .anotheroperator {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .anotheroperator img {
-        max-width: 100%;
-    }
-
-    .hotelbooking, .carhotelbooking {
-        max-width: 100%;
-        padding: 10px;
-    }
-
-    .anotherourservices h1 {
-        font-size: 2rem;
-    }
-
-    .anotherourservices p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .anotherourservices h1 {
-        font-size: 1.8rem;
-    }
-
-    .anotherourservices p {
-        font-size: 0.9rem;
-    }
-
-    .hotelbooking h5, .carhotelbooking h5 {
-        font-size: 1.5rem;
-    }
-
-    .hotelbooking p, .carhotelbooking p {
-        font-size: 0.9rem;
-    }
+  .service-card img {
+    height: 140px;
+  }
+  .services-intro h1 {
+    font-size: 2rem;
+  }
 }

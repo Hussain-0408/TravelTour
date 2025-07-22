@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../Styles/navbar.css";
-import kashmir1 from "./image/kashmirlogo1.png";
+import logo from "./image/logo.jpg";
 
 function Navbar() {
   return (
@@ -9,9 +9,17 @@ function Navbar() {
       <div className="container-fluid">
 
         {/* Logo */}
-        <Link className="navbar-brand d-flex align-items-center" to="/">
-          <img src={kashmir1} alt="Logo" className="logo me-2" />
+        <Link className="navbar-brand d-flex align-items-center brand-link" to="/">
+          <div className="logo-wrapper">
+            <img src={logo} alt="SARK Logo" className="logo-img" />
+          </div>
+          <div className="text-wrapper">
+            <h1 className="brand-title">S A R K</h1>
+            <p className="brand-subtitle">Tours & Trips</p>
+          </div>
         </Link>
+
+
 
         {/* Navbar Toggle Button */}
         <button
@@ -39,19 +47,19 @@ function Navbar() {
               <Link className="nav-link" to="/OurServices">Our Services</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Gallery">Gallery</Link>
+              <Link className="nav-link" to="/OurServices">Tour Packages</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Contactus">Contact Us</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/Login">Login</Link>
+            <li className="nav-item1">
+              <Link className="nav-link white-text" to="/Login">Login / Signup</Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link btn btn-danger text-white px-3 rounded-pill" to="/Login">
                 Logout
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

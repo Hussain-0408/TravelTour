@@ -1,38 +1,49 @@
-import React from 'react'
-import "../Styles/footer.css"
-import Icons from './Icons'
-
+import React from 'react';
+import '../Styles/footer.css';
+import Icons from './Icons';
 
 function Footer() {
-    return (
-        <div>
-            <div className='footercontainer'>
-                <div className='footersection1'>
-                    <div className='footerheader'>
-                        <h5 style={{ fontSize: "1.5rem", margin: "1rem" }}> ABOUT US</h5>
-                        <p style={{ fontSize: "1rem", margin: "1rem" }}>Discover the magic of Kashmir with us, where every moment is a masterpiece of beauty and serenity. Let us be your guide as you embark on a journey that will stay etched in your heart forever. Welcome to Trips and Tours.</p>
-                    </div>
-                    <div className='footertheme'>
-                        <h1 style={{ fontSize: "1.5rem", margin: "1rem" }}>TOURS BY THEME</h1>
-                        <h5>Mountaineering Tours</h5>
-                        <h5>House Boat Tours</h5>
-                        <h5>Sightseeing Tours</h5>
-                        <h5>Trekking Tours</h5>
-                        <h5>Skiing Tours</h5>
-                        <h5>Horse Riding Tours</h5>
-
-                    </div>
-                    <div className='footcontact'>
-                        <h1 style={{ fontSize: "1.5rem", margin: "1rem" }}>CONTACT US</h1>
-                        <address style={{ fontSize: "1rem", margin: "1rem" }}>Pandach chowk 90 feet Soura Srinagar 190006 </address>
-                     <Icons />
-                    </div>
-
-                </div>
-
-            </div>
+  return (
+    <footer className="footer-container">
+      <div className="footer-content">
+        {/* About Us */}
+        <div className="footer-column animate fade-in-up">
+          <h3>About Us</h3>
+          <p>
+            Experience the timeless charm of Hyderabad – from the historic Charminar to the flavors of Hyderabadi Biryani.
+            We offer curated travel experiences that celebrate the rich heritage, culture, and warmth of the City of Pearls.
+          </p>
         </div>
-    )
+
+        {/* Tours by Theme */}
+        <div className="footer-column animate fade-in-up delay-1">
+          <h3>Tours by Theme</h3>
+          <ul>
+            <li>Heritage Walks</li>
+            <li>City Sightseeing</li>
+            <li>Culinary Tours</li>
+            <li>Shopping Tours</li>
+            <li>Nightlife Experiences</li>
+            <li>Religious Sites Tours</li>
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div className="footer-column animate fade-in-up delay-2">
+          <h3>Contact Us</h3>
+          <address>
+            Near Charminar, Old City<br />
+            Hyderabad, Telangana 500002
+          </address>
+          <Icons />
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <p>&copy; 2025 SARK Travel & Tour. All rights reserved.</p>
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
