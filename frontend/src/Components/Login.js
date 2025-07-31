@@ -81,7 +81,7 @@ function Login() {
         </Button>
 
         <div className='forgotregister'>
-          <Link to="/Register" id="register" style={{ textDecoration: "none" }}>Register</Link>
+          <Link to="/register" id="register" style={{ textDecoration: "none" }}>Register</Link>
           <Link to="/forgotpassword" id="forgot" style={{ textDecoration: "none" }}>Forgot password</Link>
         </div>
       </Form>
