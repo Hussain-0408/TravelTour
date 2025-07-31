@@ -5,16 +5,16 @@ import logo from "./image/logo.jpg";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm px-3">
+    <nav className="navbar navbar-expand-lg navbar-light shadow-sm px-3">
       <div className="container-fluid">
 
         {/* Logo */}
-        <Link className="navbar-brand d-flex align-items-center brand-link" to="/">
+        <Link className="navbar-brand d-flex align-items-center  brand-link" to="/">
           <div className="logo-wrapper">
             <img src={logo} alt="SARK Logo" className="logo-img" />
           </div>
           <div className="text-wrapper">
-            <h1 className="brand-title">S A R K</h1>
+            <h1 className="brand-title bg-light" >S A R K</h1>
             <p className="brand-subtitle">Tours & Trips</p>
           </div>
         </Link>
@@ -35,7 +35,7 @@ function Navbar() {
         </button>
 
         {/* Navbar Links */}
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div className="collapse navbar-collapse justify-content-end " id="navbarNav">
           <ul className="navbar-nav gap-2">
             <li className="nav-item">
               <Link className="nav-link" to="/">Home</Link>
