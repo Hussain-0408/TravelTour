@@ -8,8 +8,8 @@ import Register from './Components/Register';
 import Aboutus from './Components/Aboutus'
 import OurServices from './Components/OurServices';
 // import TourServices from './Components/OurServices';
+import Tourpackages from './Components/Tourpackages';
 import Gallary from './Components/Gallery';
-import TrikkingTour from './Components/TrikkingTour'
 import Logout from './Components/Logout'
 import Forgotpassword from './Components/Forgotpassword';
 
@@ -26,7 +26,7 @@ function App() {
         <Route path = '/Aboutus' element = {<Aboutus/>} />
         <Route path = '/Gallery'  element = {<Gallary/>} />
         <Route path = '/OurServices'  element = {<OurServices/>} />
-        <Route path = "/trikkingtour" element = {<TrikkingTour/>} />
+        < Route path ='/Tourpackages' element = {<Tourpackages/>} />
        <Route path = "/Logout" element = {<Logout/>} />
        <Route path = "/forgotpassword" element={<Forgotpassword />} /> 
       </Routes>

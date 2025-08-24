@@ -14,8 +14,10 @@ function Navbar() {
             <img src={logo} alt="SARK Logo" className="logo-img" />
           </div>
           <div className="text-wrapper">
-            <h1 className="brand-title bg-light" >S A R K</h1>
-            <p className="brand-subtitle">Tours & Trips</p>
+            <section>
+              <h1 className="brand-title" >S A R K</h1>
+              <p className="brand-subtitle "><strong>Travel Services</strong></p>
+            </section>
           </div>
         </Link>
 
@@ -47,7 +49,7 @@ function Navbar() {
               <Link className="nav-link" to="/OurServices">Our Services</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/OurServices">Tour Packages</Link>
+              <Link className="nav-link" to="/Tourpackages">Tour Packages</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Contactus">Contact Us</Link>
