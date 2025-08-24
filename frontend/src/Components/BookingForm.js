@@ -18,12 +18,12 @@ const BookingForm = ({ selectedPackage, onClose }) => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/bookings", {
+      await axios.post("http://localhost:3007/api/bookingForm", {
         packageName: selectedPackage.title,
         ...formData,
       });
 
-      alert("✅ Booking Confirmed & Saved to Database!");
+      alert("✅ Booking Confirmed ");
       onClose();
     } catch (error) {
       console.error(error);
@@ -38,7 +38,9 @@ const BookingForm = ({ selectedPackage, onClose }) => {
         <form onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} required />
           <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} required />
-          <input type="date" name="date" value={formData.date} onChange={handleChange} required />
+          
+            <input type="date"  name="date" value={formData.date} onChange={handleChange} required />
+         
           <input type="number" name="persons" min="1" value={formData.persons} onChange={handleChange} />
           <button type="submit" className="btn-submit">Confirm Booking</button>
           <button type="button" className="btn-cancel" onClick={onClose}>Cancel</button>
@@ -49,3 +51,4 @@ const BookingForm = ({ selectedPackage, onClose }) => {
 };
 
 export default BookingForm;
+

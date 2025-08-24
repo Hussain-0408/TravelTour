@@ -1,19 +1,24 @@
-let express = require("express")
-let app = express()
-let bodyparser = require("body-parser")
-let mongodb = require("mongodb")
-let client = mongodb.MongoClient
-let cors = require("cors")
-app.use(bodyparser.json())
+let express = require("express");
+let app = express();
+let bodyparser = require("body-parser");
+let cors = require("cors");
+let mongoose = require("mongoose");
+
+app.use(bodyparser.json());
 app.use(cors());
 
-app.use("/login",require("./routers/Login"))
-app.use("/register",require("./routers/Register"))
-app.use("/fetchdata",require("./routers/fetch"))
-app.use("/update",require("./routers/update"))
+// ✅ MongoDB Connection (fix here)
+mongoose.connect("mongodb://localhost:27017/travelTour")
+  .then(() => console.log("✅ MongoDB Connected"))
+  .catch(err => console.error("❌ MongoDB connection error:", err));
 
+// Routes
+app.use("/login", require("./routers/Login"));
+app.use("/register", require("./routers/Register"));
+app.use("/fetchdata", require("./routers/fetch"));
+app.use("/update", require("./routers/update"));
+app.use("/api/bookingForm", require("./routers/bookingForm"));
 
-app.listen(3007,(req,res)=>{
-    console.log("server running")
+app.listen(3007, () => {
+  console.log("server running on http://localhost:3007");
 });
-
