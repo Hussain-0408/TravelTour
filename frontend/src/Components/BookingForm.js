@@ -19,8 +19,11 @@ const BookingForm = ({ selectedPackage, onClose }) => {
 
     try {
       await axios.post("http://localhost:3007/api/bookingForm", {
-        packageName: selectedPackage.title,
-        ...formData,
+        name: formData.name,
+        email: formData.email,
+        date: formData.date,
+        persons: formData.persons,
+        package: selectedPackage.title, // 👈 matches backend schema
       });
 
       alert("✅ Booking Confirmed ");
@@ -36,14 +39,42 @@ const BookingForm = ({ selectedPackage, onClose }) => {
       <div className="booking-modal">
         <h2>Book: {selectedPackage.title}</h2>
         <form onSubmit={handleSubmit}>
-          <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} required />
-          <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} required />
-          
-            <input type="date"  name="date" value={formData.date} onChange={handleChange} required />
-         
-          <input type="number" name="persons" min="1" value={formData.persons} onChange={handleChange} />
-          <button type="submit" className="btn-submit">Confirm Booking</button>
-          <button type="button" className="btn-cancel" onClick={onClose}>Cancel</button>
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="date"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="number"
+            name="persons"
+            min="1"
+            value={formData.persons}
+            onChange={handleChange}
+          />
+          <button type="submit" className="btn-submit">
+            Confirm Booking
+          </button>
+          <button type="button" className="btn-cancel" onClick={onClose}>
+            Cancel
+          </button>
         </form>
       </div>
     </div>
@@ -51,4 +82,3 @@ const BookingForm = ({ selectedPackage, onClose }) => {
 };
 
 export default BookingForm;
-
