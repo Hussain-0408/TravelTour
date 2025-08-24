@@ -6,6 +6,8 @@ import charminar from "./image/charminar.jpg";
 import golconda from "./image/golconda.jpg";
 import hitec from "./image/hitec.jpg";
 import Ramoji from "./image/Ramoji.jpg";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const Tourpackages = () => {
   const [selectedPackage, setSelectedPackage] = useState(null);
@@ -19,28 +21,32 @@ const Tourpackages = () => {
   ];
 
   return (
-    <div className="tour-container">
-      {packages.map((pkg) => (
-        <div className="card" style={{ width: "18rem" }} key={pkg.id}>
-          <img className="card-img-top" src={pkg.img} alt={pkg.title} />
-          <div className="card-body">
-            <h5 className="card-title">{pkg.title}</h5>
-            <p className="card-text">{pkg.desc}</p>
-            <button className="btn btn-primary" onClick={() => setSelectedPackage(pkg)}>
-              Book Now
-            </button>
+    <>
+    <Navbar/>
+      <div className="tour-container">
+        {packages.map((pkg) => (
+          <div className="card" style={{ width: "18rem" }} key={pkg.id}>
+            <img className="card-img-top" src={pkg.img} alt={pkg.title} />
+            <div className="card-body">
+              <h5 className="card-title">{pkg.title}</h5>
+              <p className="card-text">{pkg.desc}</p>
+              <button className="btn btn-primary" onClick={() => setSelectedPackage(pkg)}>
+                Book Now
+              </button>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
 
-      {/* Booking Popup */}
-      {selectedPackage && (
-        <BookingForm
-          selectedPackage={selectedPackage}
-          onClose={() => setSelectedPackage(null)}
-        />
-      )}
-    </div>
+        {/* Booking Popup */}
+        {selectedPackage && (
+          <BookingForm
+            selectedPackage={selectedPackage}
+            onClose={() => setSelectedPackage(null)}
+          />
+        )}
+      </div>
+      <Footer/>
+    </>
   );
 };
 

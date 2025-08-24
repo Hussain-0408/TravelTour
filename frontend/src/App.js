@@ -12,7 +12,7 @@ import Tourpackages from './Components/Tourpackages';
 import Gallary from './Components/Gallery';
 import Logout from './Components/Logout'
 import Forgotpassword from './Components/Forgotpassword';
-import BookingFarm from './Components/BookingFarm';
+import BookingForm from './Components/BookingForm';
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
         < Route path ='/Tourpackages' element = {<Tourpackages/>} />
        <Route path = "/Logout" element = {<Logout/>} />
        <Route path = "/forgotpassword" element={<Forgotpassword />} />
-       <Route path = "/BookingFarm" element={<BookingFarm/>} />
+       <Route path = "/BookingForm" element={<BookingForm/>} />
       </Routes>
       </HashRouter>
     </div>
