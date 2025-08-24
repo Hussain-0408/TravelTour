@@ -12,6 +12,7 @@ import Tourpackages from './Components/Tourpackages';
 import Gallary from './Components/Gallery';
 import Logout from './Components/Logout'
 import Forgotpassword from './Components/Forgotpassword';
+import BookingFarm from './Components/BookingFarm';
 
 
 function App() {
@@ -28,7 +29,8 @@ function App() {
         <Route path = '/OurServices'  element = {<OurServices/>} />
         < Route path ='/Tourpackages' element = {<Tourpackages/>} />
        <Route path = "/Logout" element = {<Logout/>} />
-       <Route path = "/forgotpassword" element={<Forgotpassword />} /> 
+       <Route path = "/forgotpassword" element={<Forgotpassword />} />
+       <Route path = "/BookingFarm" element={<BookingFarm/>} />
       </Routes>
       </HashRouter>
     </div>
