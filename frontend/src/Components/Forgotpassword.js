@@ -33,12 +33,12 @@ function Forgotpassword() {
       alert(response.data);
 
       if (response.status === 200) {
-        navigate('/Login'); // after reset go to login page
+        navigate('/Login'); 
       }
 
     } catch (err) {
       if (err.response) {
-        alert(err.response.data); // show backend error like "User not found"
+        alert(err.response.data); 
         console.error("Server Error:", err.response.data);
       } else if (err.request) {
         alert("No response from server. Try again later.");

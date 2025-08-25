@@ -40,7 +40,7 @@ function Navbar() {
         <div className="collapse navbar-collapse justify-content-end " id="navbarNav">
           <ul className="navbar-nav gap-2">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <Link className="nav-link " to="/"> Home</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Aboutus">About Us</Link>

@@ -96,11 +96,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
-/* OPTIONAL: Equal height nav items (optional, only if misaligned) */
 .navbar-nav .nav-item {
   display: flex;
   align-items: center;
+  color: #d50c0c;
 }
 
 
