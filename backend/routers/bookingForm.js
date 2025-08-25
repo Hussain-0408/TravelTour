@@ -15,11 +15,11 @@ let Booking = mongoose.model("Booking", BookingSchema);
 
 // ✅ Package list (map package → location)
 const packageLocations = {
-  "Beach Paradise": "Goa, India",
-  "Mountain Adventure": "Manali, India",
-  "City Lights": "Mumbai, India",
-  "Royal Heritage": "Jaipur, India",
-  "Backwaters Bliss": "Kerala, India",
+  "charminar": "hyderabad, India",
+  "golconda": "hyderabad, India",
+  "hiteccity": "hyderabad, India",
+  "ramojifilmcity": "rangareddy, India",
+  "mehfil": "dilsuqnagar rangareddy, India",
 };
 
 // POST API
@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
     const { name, email, package } = req.body;
 
     // Check if package exists
-    const location = packageLocations[package] || "Unknown Location";
+    const location = packageLocations[package] || "Location";
 
     // Generate unique booking ID
     const bookingId = "BK" + Date.now();
