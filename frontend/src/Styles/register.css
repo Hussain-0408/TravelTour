@@ -1,85 +1,34 @@
-.container1{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    background-image: url("../Components/image/register.jpg");
-    background-size: cover;
-    background-position: center;
-    
-}
-.registerpage{
-    border: 1px solid red;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.5rem;
-    background-color: transparent;
-
+.container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background:  #ACB6E5 100%;
 }
 
-.registerpage input{
-    margin: 0rem 1rem 1rem 1rem;
-    border-radius: 0.4rem;
-    height: 50px;
-    justify-content: center;
-    width: 300px;
-    
-}
-.registerpage button{
-    margin: 0rem 1rem 1rem 1rem;
-    border-radius: 0.4rem;
-    height: 50px;
-    justify-content: center;
-   position: relative;
-   /* left: 280px;
-   top: 15px; */
-    width: 300px;
-}
-.registerpage label{
-    margin: 0rem 0.5rem 0.9rem 1.5rem ;
-    border-radius: 0.4rem;
-}
-.button{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+.registerpage {
+  width: 100%;
+  max-width: 600px; /* keeps form centered and not too wide */
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
 }
 
-
-
-
-
-
-
-@media only screen and (min-width: 200px)and (max-width: 800px) {
-    .registerpage {
-        width: 100vw;
-        height: auto;
-        padding: 2rem 0;
-    }
-    .button{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-
-    }
+.button {
+  margin-top: 20px;
 }
 
-@media only screen and (min-width: 200px) and(max-width:800px) {
-    .registerpage input {
-
-        width: 90vw;
-        padding: 0px;
-
-    }
-
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .registerpage {
+    padding: 20px;
+  }
+  label {
+    font-size: 14px;
+  }
+  input {
+    font-size: 14px;
+  }
 }

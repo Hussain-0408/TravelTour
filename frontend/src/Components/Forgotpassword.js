@@ -12,33 +12,48 @@ function Forgotpassword() {
   const handleChange = async (e) => {
     e.preventDefault();
 
+    // password match check
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
 
+    // basic validation
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters long");
+      return;
+    }
+
     try {
       const response = await axios.put("http://localhost:3007/update", {
-        email: email,
-        password: password
+        email,
+        password
       });
 
       alert(response.data);
 
       if (response.status === 200) {
-        navigate('/');
+        navigate('/Login'); // after reset go to login page
       }
 
     } catch (err) {
-      console.error(err);
-      alert("Error updating password");
+      if (err.response) {
+        alert(err.response.data); // show backend error like "User not found"
+        console.error("Server Error:", err.response.data);
+      } else if (err.request) {
+        alert("No response from server. Try again later.");
+      } else {
+        alert("Unexpected error: " + err.message);
+      }
     }
   };
 
   return (
     <div className='forgotcontainer'>
       <form className='forgotform' onSubmit={handleChange}>
-        <h1>Email</h1>
+        <h2>Reset Password</h2>
+
+        <label>Email</label>
         <input
           type='email'
           name='email'
@@ -47,7 +62,7 @@ function Forgotpassword() {
           required
         />
 
-        <h1>New Password</h1>
+        <label>New Password</label>
         <input
           type='password'
           name='password'
@@ -56,7 +71,7 @@ function Forgotpassword() {
           required
         />
 
-        <h1>Confirm Password</h1>
+        <label>Confirm Password</label>
         <input
           type='password'
           name='confirmPassword'

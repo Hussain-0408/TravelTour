@@ -1,11 +1,11 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Label, FormGroup, Input, Col, Button, Form, Row } from 'reactstrap'
+import { Label, FormGroup, Input, Col, Button, Form, Row } from 'reactstrap';
 import '../Styles/register.css';
 
 function Register() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [formdata, setFormdata] = useState({
     email: "",
     password: "",
@@ -13,15 +13,20 @@ function Register() {
     city: "",
     state: "",
     zip: ""
-
-  })
+  });
 
   const handlesubmit = async (e) => {
     e.preventDefault();
     try {
-      let response = await axios.post("http://localhost:3007/Register", formdata)
-      console.log(response.data)
-      alert(response.data)
+      if (!formdata.email || !formdata.password) {
+        alert("Email and Password are required!");
+        return;
+      }
+
+      let response = await axios.post("http://localhost:3007/Register", formdata);
+      console.log(response.data);
+      alert(response.data);
+
       setFormdata({
         email: "",
         password: "",
@@ -30,50 +35,49 @@ function Register() {
         state: "",
         zip: ""
       });
+
       if (response.status === 200) {
-        navigate('/')
+        navigate('/');
       }
     } catch (err) {
-      console.log(err)
+      console.log(err);
+      alert("Something went wrong. Please try again!");
     }
-  }
+  };
 
   const handleFormdata = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormdata({
       ...formdata,
       [name]: value
-    })
-  }
+    });
+  };
+
   return (
     <div className='container1'>
       <div className='registerpage'>
         <Form onSubmit={handlesubmit}>
           <Row>
-            <Col md={6}>
+            <Col xs={12} md={6}>
               <FormGroup>
-                <Label for="exampleEmail">
-                  Email
-                </Label>
+                <Label for="exampleEmail">Email</Label>
                 <Input
                   id="exampleEmail"
                   name="email"
-                  placeholder="email"
+                  placeholder="Enter your email"
                   type="email"
                   value={formdata.email}
                   onChange={handleFormdata}
                 />
               </FormGroup>
             </Col>
-            <Col md={6}>
+            <Col xs={12} md={6}>
               <FormGroup>
-                <Label for="examplePassword">
-                  Password
-                </Label>
+                <Label for="examplePassword">Password</Label>
                 <Input
                   id="examplePassword"
                   name="password"
-                  placeholder="password "
+                  placeholder="Enter your password"
                   type="password"
                   value={formdata.password}
                   onChange={handleFormdata}
@@ -81,69 +85,70 @@ function Register() {
               </FormGroup>
             </Col>
           </Row>
-          <FormGroup>
-            <Label for="exampleAddress">
-              Address
-            </Label>
-            <Input
-              id="exampleAddress"
-              name="address"
-              value={formdata.address}
-              onChange={handleFormdata}
-            />
-          </FormGroup>
 
           <Row>
-            <Col md={6}>
+            <Col xs={12}>
               <FormGroup>
-                <Label for="exampleCity">
-                  City
-                </Label>
+                <Label for="exampleAddress">Address</Label>
+                <Input
+                  id="exampleAddress"
+                  name="address"
+                  placeholder="Enter your address"
+                  value={formdata.address}
+                  onChange={handleFormdata}
+                />
+              </FormGroup>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col xs={10}md={5} lg={5}>
+              <FormGroup>
+                <Label for="exampleCity">City</Label>
                 <Input
                   id="exampleCity"
                   name="city"
+                  placeholder="City"
                   value={formdata.city}
                   onChange={handleFormdata}
                 />
               </FormGroup>
             </Col>
-            <Col md={4}>
+            <Col xs={12} md={4} lg={4}>
               <FormGroup>
-                <Label for="exampleState">
-                  State
-                </Label>
+                <Label for="exampleState">State</Label>
                 <Input
                   id="exampleState"
                   name="state"
+                  placeholder="State"
                   value={formdata.state}
                   onChange={handleFormdata}
                 />
               </FormGroup>
             </Col>
-            <Col md={5}>
+            <Col xs={12} md={3} lg={3}>
               <FormGroup>
-                <Label for="exampleZip">
-                  Pincode
-                </Label>
+                <Label for="exampleZip">Zip</Label>
                 <Input
                   id="exampleZip"
                   name="zip"
+                  placeholder="Zip"
                   value={formdata.zip}
                   onChange={handleFormdata}
                 />
               </FormGroup>
             </Col>
           </Row>
-          <div className='button'>
 
-            <Button type='submit'  >
+          <div className='button'>
+            <Button type='submit' color="primary" block>
               Register
             </Button>
           </div>
         </Form>
       </div>
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;
