@@ -1,11 +1,11 @@
 
 import './App.css';
 import Home from './Components/Home';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter,  Route, Routes } from 'react-router-dom';
 import Login from './Components/Login';
 import Contactus from './Components/Contactus';
 import Register from './Components/Register';
-import Aboutus from './Components/Aboutus'
+import Aboutus from './Components/Aboutus';
 import OurServices from './Components/OurServices';
 // import TourServices from './Components/OurServices';
 import Tourpackages from './Components/Tourpackages';
@@ -18,7 +18,7 @@ import BookingForm from './Components/BookingForm';
 function App() {
   return (
     <div >
-      <HashRouter>
+      <BrowserRouter>
       <Routes>   
         <Route path='/' element= {<Home/>} />
         <Route path='/Login' element= {<Login/>} />
@@ -32,7 +32,7 @@ function App() {
        <Route path = "/forgotpassword" element={<Forgotpassword />} />
        <Route path = "/BookingForm" element={<BookingForm/>} />
       </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 }
