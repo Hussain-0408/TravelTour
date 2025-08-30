@@ -13,9 +13,9 @@ mongoose.connect("mongodb://localhost:27017/travelTour")
   .catch(err => console.error("❌ MongoDB connection error:", err));
 
 // Routes
-app.use("/login", require("./routers/Login"));
+app.use("/Login", require("./routers/Login"));
 app.use("/register", require("./routers/Register"));
-app.use("/fetchdata", require("./routers/fetch"));
+app.use("/fetchdata", require("./routers/Fetch"));
 app.use("/update", require("./routers/update"));
 app.use("/api/bookingForm", require("./routers/bookingForm"));
 
