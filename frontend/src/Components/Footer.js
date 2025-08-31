@@ -2,9 +2,12 @@ import React from 'react';
 import '../Styles/footer.css';
 import Icons from './Icons';
 
+
+
 function Footer() {
   return (
     <footer className="footer-container">
+
       <div className="footer-content">
         {/* About Us */}
         <div className="footer-column animate fade-in-up">
@@ -29,6 +32,7 @@ function Footer() {
         </div>
 
         {/* Contact Info */}
+
         <div className="footer-column animate fade-in-up delay-2">
           <h3>Contact Us</h3>
           <address>
@@ -37,11 +41,13 @@ function Footer() {
           </address>
           <Icons />
         </div>
+
       </div>
 
       <div className="footer-bottom">
         <p>&copy; 2025 SARK Travel & Tour. All rights reserved.</p>
       </div>
+
     </footer>
   );
 }
