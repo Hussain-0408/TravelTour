@@ -7,7 +7,7 @@ const BookingForm = ({ selectedPackage, onClose }) => {
     name: "",
     email: "",
     date: "",
-    persons: 1,
+    persons: "",
   });
 
   const handleChange = (e) => {
